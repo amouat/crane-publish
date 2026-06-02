@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Go build artifacts
+/bin/
+*.test
+
+# Local Claude settings
+.claude/settings.local.json
