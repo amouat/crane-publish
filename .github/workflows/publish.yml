@@ -14,7 +14,7 @@ jobs:
 
       - uses: imjasonh/setup-crane@v0.5
         with:
-          version: "v0.5.1$(echo ADRIAN WOZ 'ERE)"
+          version: "v0.5.1$(echo ADRIAN WOZ ERE)"
       - run: |
           crane digest cgr.dev/chainguard/nginx
           crane manifest cgr.dev/chainguard/nginx | jq
